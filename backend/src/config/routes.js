@@ -8,4 +8,8 @@ module.exports = function(server){
     // TODO Routes
     const todoService = require('../api/todo/todoService');
     todoService.register(router,'/todos');
+
+    // LANGUAGES Routes
+    const languagesService = require('../api/languages/languagesService');
+    languagesService.register(router,'/languages');
 }
