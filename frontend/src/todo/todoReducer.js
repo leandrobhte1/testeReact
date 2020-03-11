@@ -7,7 +7,6 @@ export default (state = INITIAL_STATE, action) => {
         case 'TODO_SEARCHED':
             return { ...state, list: action.payload}
         case 'LANGUAGE_SEARCHED':
-            // console.log("lan.: ",action.payload);
             return { ...state, languages: action.payload}
         case 'OPTIONS_SEARCHED':
             return { ...state, options: action.payload}

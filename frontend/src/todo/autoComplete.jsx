@@ -5,25 +5,11 @@ import faker from 'faker'
 // Import the Autocomplete Component
 import Autocomplete from 'react-autocomplete';
 
-import axios from 'axios'
-
-const URLGeral = 'http://localhost:3007/api/todos'
-
-const URLLanguages = 'http://localhost:3007/api/languages'
-
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { add, searchPeople, changeDescription, search, clear, handlerKey, addLanguage, searchLanguages, changeDescriptionValue } from './todoActions'
 
-const inputStyle = {
-    width: '100%',
-  };
-
-  
-
 class AutoComplete extends React.Component {
-
-    
 
     constructor(props, context) {
         super(props, context);
@@ -34,15 +20,8 @@ class AutoComplete extends React.Component {
             value: "",
             // Data that will be rendered in the autocomplete
             // As it is asynchronous, it is initially empty
-            autocompleteData: [],
-            options: []
+            autocompleteData: []
         };
-
-        
-
-        
-
-        
 
         // Bind `this` context to functions of the class
         this.onChange = this.onChange.bind(this);
@@ -68,33 +47,6 @@ class AutoComplete extends React.Component {
         _this.setState({
             autocompleteData: optionsSearch
         });
-
-    //     // Url of your website that process the data and returns a
-    //     let url = `http://localhost:3007/api/languages?query=${searchText}`; ///search itens in relational databases
-
-    // // let url=`http://localhost:3007/api/languages?name=${searchText}`;///retornara resultado apenas se palavra é exatamente igual ao registro do banco,não pega palavras incompletas
-        
-    //     // Configure a basic AJAX request to your server side API
-    //     // that returns the data according to the sent text
-    //     let xhr = new XMLHttpRequest();
-    //     xhr.open('GET', url, true);
-    //     xhr.responseType = 'json';
-    //     xhr.onload = () => {
-    //         let status = xhr.status;
-
-    //         if (status == 200) {
-    //             _this.setState({
-    //                 autocompleteData: optionsSearch
-    //             });
-
-    //             // Show response of your server in the console
-    //             // console.log("languages in db:",xhr.response);
-    //         } else {
-    //             console.error("Cannot load data from remote source");
-    //         }
-    //     };
-
-    //     xhr.send();
     }
     
     /**
@@ -161,8 +113,6 @@ class AutoComplete extends React.Component {
 
     render() {
 
-        
-
         return (
             <div>
                 <Autocomplete
@@ -172,7 +122,7 @@ class AutoComplete extends React.Component {
                     value={this.props.description}
                     onChange={this.onChange}
                     onSelect={this.onSelect}
-                    inputProps={{ className: "InputLanguages", placeholder: "Digite aqui um nome",style: inputStyle }}
+                    inputProps={{ className: "InputLanguages", placeholder: "Digite aqui um nome"}}
                 />
             </div>
         );
