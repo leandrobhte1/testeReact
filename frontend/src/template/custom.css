@@ -16,11 +16,22 @@
 }
 
 
+.InputLanguages{
+  width: 100%;
+  height: 35px;
+  padding: 10px 20px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
 
 
-
-
-
+.divInputSearc div{
+  width: 100% !important;
+  max-width: 920px !important;
+}
 
 
 

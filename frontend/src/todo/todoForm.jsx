@@ -6,6 +6,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { add, changeDescription, search, clear, handlerKey } from './todoActions'
 
+import AutoSuggest from './autoSuggest'
+
 import AutoComplete from './autoComplete'
 
 class TodoForm extends Component {
@@ -32,9 +34,9 @@ class TodoForm extends Component {
         return (
             <div role='form' className='todoForm'>
                 <Grid cols='12 9 10'> {/* <div className= col-xs-12 col-sm-9 col-md-10> </div> */}
-                    <AutoComplete onChange={this.props.changeDescription} onKeyUp={this.props.handlerKey} value={this.props.description}></AutoComplete>
-                    {/* <input id='description' className='form-control' onChange={this.props.changeDescription} onKeyUp={this.keyHandler}
-                    placeholder='Adicione uma tarefa' value={this.props.description}></input> */}
+                    <div className="divInputSearc">
+                        <AutoComplete></AutoComplete>
+                    </div>
                 </Grid>
 
                 <Grid cols='12 3 2'> {/* <div className= col-xs-12 col-sm-3 col-md-2> </div> */}

@@ -1,4 +1,4 @@
-const INITIAL_STATE = {description: '',list: [], languages: []}
+const INITIAL_STATE = {description: '',list: [], languages: [], options: []}
 
 export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
@@ -9,6 +9,8 @@ export default (state = INITIAL_STATE, action) => {
         case 'LANGUAGE_SEARCHED':
             // console.log("lan.: ",action.payload);
             return { ...state, languages: action.payload}
+        case 'OPTIONS_SEARCHED':
+            return { ...state, options: action.payload}
         case 'TODO_CLEAR':
             return { ...state, description: ''}
         default:
